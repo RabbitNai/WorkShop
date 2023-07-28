@@ -1914,7 +1914,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #5046E1;
+			background-color: #385398;
 			color: #ffffff !important;
 		}
 
@@ -2536,7 +2536,7 @@ input, select, textarea {
 			}
 
 				.wrapper.style1 .icon.major:before {
-					color: #5e42a6;
+					color: #795fbb;
 				}
 
 				.wrapper.style1-alt .icon.major:before {
@@ -2548,15 +2548,15 @@ input, select, textarea {
 				}
 
 				.wrapper.style2-alt .icon.major:before {
-					color: #3e4094;
+					color: #282a6d;
 				}
 
 				.wrapper.style3 .icon.major:before {
-					color: #b74e91;
+					color: #432f69;
 				}
 
 				.wrapper.style3-alt .icon.major:before {
-					color: #953d75;
+					color: #4c2a63;
 				}
 
 /* Image */
@@ -3236,19 +3236,19 @@ input, select, textarea {
 			}
 
 		.wrapper.alt {
-			background-color: #261c3e;
+			background-color: #342161;
 		}
 
 		.wrapper.style1 {
-			background-color: #5e42a6;
+			background-color: #3d508b;
 		}
 
 		.wrapper.style1-alt {
-			background-color: #493382;
+			background-color: #333f82;
 		}
 
 		.wrapper.style2 {
-			background-color: #5052b5;
+			background-color: #2b457d;
 		}
 
 		.wrapper.style2-alt {
@@ -3256,11 +3256,11 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #b74e91;
+			background-color: #4d5e96;
 		}
 
 		.wrapper.style3-alt {
-			background-color: #953d75;
+			background-color: #463d95;
 		}
 
 		.wrapper.fullscreen {
@@ -3871,13 +3871,9 @@ input, select, textarea {
 		}
 
 /* Intro */
-
-.text-with-border {
-	color: black; /* 設置文字顏色 */
-	text-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff; /* 在四個方向添加文字陰影，模擬外框效果 */
-  }
 	#intro {
 		background-attachment: fixed;
+		background-color: #b74e91;
 		background-image: url("images/intro.svg"),url("../../images/cover.png");
 		background-position: center center;
 		background-repeat: no-repeat;
