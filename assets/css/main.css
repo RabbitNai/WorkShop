@@ -3928,3 +3928,16 @@ input, select, textarea {
 	.image.fit2 img {
 		width: 80%;
 	}
+
+/* Reveal (scroll fade-up for images) */
+
+	.reveal {
+		opacity: 0;
+		transform: translateY(28px);
+		transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+		.reveal.is-visible {
+			opacity: 1;
+			transform: none;
+		}
