@@ -22,7 +22,7 @@
 		color: _palette(fg-bold) !important;
 		cursor: pointer;
 		display: inline-block;
-		font-size: 0.6em;
+		font-size: 0.85em;
 		font-weight: _font(weight-bold);
 		height: calc(4.75em + 2px);
 		letter-spacing: _font(kerning-alt);
@@ -64,7 +64,7 @@
 		}
 
 		&.small {
-			font-size: 0.4em;
+			font-size: 0.7em;
 		}
 
 		&.large {
