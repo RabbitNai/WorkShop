@@ -10,7 +10,7 @@
 		> section {
 			@include vendor('display', 'flex');
 			@include vendor('flex-direction', 'row');
-			min-height: 22.5em;
+			min-height: 26em;
 
 			body.is-ie & {
 				min-height: 0;
@@ -22,7 +22,8 @@
 				border-radius: 0;
 				display: block;
 				position: relative;
-				width: 25em;
+				width: 26em;
+				@include vendor('flex-shrink', '0');
 
 				img {
 					border-radius: 0;
@@ -48,7 +49,7 @@
 				@include vendor('display', 'flex');
 				@include vendor('flex-direction', 'column');
 				@include vendor('justify-content', 'center');
-				width: #{_size(inner-width) - 25em};
+				width: #{_size(inner-width) - 26em};
 				-ms-flex: 1;
 
 				> .inner {
