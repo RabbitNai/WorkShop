@@ -6,6 +6,43 @@
 	if (!items.length)
 		return;
 
+	// Horizontal rows: wrap each gallery and add prev/next arrows (shown only for mouse users).
+	Array.prototype.forEach.call(document.querySelectorAll('#main .gallery'), function(row) {
+		var wrap = document.createElement('div'),
+			prev = document.createElement('button'),
+			next = document.createElement('button');
+
+		wrap.className = 'gallery-wrap';
+		row.parentNode.insertBefore(wrap, row);
+		wrap.appendChild(row);
+
+		prev.type = next.type = 'button';
+		prev.className = 'gallery-arrow gallery-arrow-prev';
+		next.className = 'gallery-arrow gallery-arrow-next';
+		prev.setAttribute('aria-label', '\u5411\u5de6\u6372\u52d5');
+		next.setAttribute('aria-label', '\u5411\u53f3\u6372\u52d5');
+		prev.innerHTML = '&#8249;';
+		next.innerHTML = '&#8250;';
+		wrap.appendChild(prev);
+		wrap.appendChild(next);
+
+		function update() {
+			var max = row.scrollWidth - row.clientWidth;
+			prev.classList.toggle('is-hidden', row.scrollLeft < 4);
+			next.classList.toggle('is-hidden', row.scrollLeft > max - 4);
+		}
+
+		function step(dir) {
+			row.scrollBy({ left: dir * row.clientWidth * 0.8, behavior: 'smooth' });
+		}
+
+		prev.addEventListener('click', function() { step(-1); });
+		next.addEventListener('click', function() { step(1); });
+		row.addEventListener('scroll', update, { passive: true });
+		window.addEventListener('resize', update);
+		update();
+	});
+
 	var box = document.createElement('div');
 	box.className = 'lightbox';
 	box.setAttribute('role', 'dialog');
