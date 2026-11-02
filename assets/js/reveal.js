@@ -1,26 +1,34 @@
 (function() {
 
-	// Fade-up reveal for images in the main content area.
-	var imgs = document.querySelectorAll('#main img');
+	// Fade-up reveal for gallery items and price cards in the main content area.
+	var items = document.querySelectorAll('#main .gallery-item, #main .price-card');
 
-	if (!imgs.length
+	if (!items.length
 	||	!('IntersectionObserver' in window)
 	||	window.matchMedia('(prefers-reduced-motion: reduce)').matches)
 		return;
 
 	var observer = new IntersectionObserver(function(entries) {
 		entries.forEach(function(entry) {
+			var el = entry.target;
+
 			if (!entry.isIntersecting)
 				return;
-			entry.target.classList.add('is-visible');
-			observer.unobserve(entry.target);
+
+			el.classList.add('is-visible');
+			observer.unobserve(el);
+
+			// The stagger delay is only for the entrance.
+			window.setTimeout(function() {
+				el.style.transitionDelay = '';
+			}, 1400);
 		});
 	}, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
 
-	Array.prototype.forEach.call(imgs, function(img, i) {
-		img.classList.add('reveal');
-		img.style.transitionDelay = (i % 3) * 0.08 + 's';
-		observer.observe(img);
+	Array.prototype.forEach.call(items, function(el, i) {
+		el.classList.add('reveal');
+		el.style.transitionDelay = (i % 3) * 0.08 + 's';
+		observer.observe(el);
 	});
 
 })();

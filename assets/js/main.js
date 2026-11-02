@@ -47,7 +47,7 @@
 	// Sidebar.
 		if ($sidebar.length > 0) {
 
-			var $sidebar_a = $sidebar.find('a');
+			var $sidebar_a = $sidebar.find('nav a');
 
 			$sidebar_a
 				.addClass('scrolly')
